@@ -1,14 +1,19 @@
-//
-//  main.cpp
-//  deliminatedFile
-//
-//  Created by Abel Anand on 2/14/22.
-//
+//Abel Anand
 
 #include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+#include <fstream>
+using namespace std;
+int main() {
+    ifstream in;
+    ofstream out("outDelim.txt");
+    in.open("inDelim.txt");
+    string temp = "\t";
+    
+    if (!!in.is_open()) {
+        cout << "File not found\n";
+    }
+    
+    while (getline(in, temp, ',')) {
+        
+    }
 }
