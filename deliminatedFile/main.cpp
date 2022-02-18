@@ -5,23 +5,26 @@
 using namespace std;
 int main() {
     ifstream in;
-    ofstream out("outDelim.txt");
-    in.open("inDelim.txt");
+    ofstream out("/Users/Abel/Desktop/Cpp/deliminatedFile/deliminatedFile/outDelim.txt");
+    in.open("/Users/Abel/Desktop/Cpp/deliminatedFile/deliminatedFile/inDelim.txt");
     string temp;
     string name;
     char ch;
     int i;
+    float f;
     
-    if (!!in.is_open()) {
+    if (!in.is_open()) {
         cout << "File not found\n";
     }
     
     while (getline(in, temp, ',')) {
-        getline(in, temp, ',');
-        ch = temp.at(0);
-        getline(in, temp);
         i = stoi(temp);
-        out << name << '\t' << ch << '\t' << i << '\n';
+        f = stof(temp);
+        getline(in, name, ',');
+        ch = temp.at(0);
+        getline(in, name);
+        out << i << '\t' << name << '\t' << ch << '\n' ;
+        cout << name << '\t' << ch << '\n' ;
     }
     in.close();
     out.close();
