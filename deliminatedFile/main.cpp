@@ -8,7 +8,7 @@ int main() {
     ofstream out("/Users/Abel/Desktop/Cpp/deliminatedFile/deliminatedFile/outDelim.txt");
     in.open("/Users/Abel/Desktop/Cpp/deliminatedFile/deliminatedFile/inDelim.txt");
     string temp;
-    string name;
+    string txt;
     char ch;
     int i;
     float f;
@@ -19,12 +19,13 @@ int main() {
     
     while (getline(in, temp, ',')) {
         i = stoi(temp);
+        getline(in, temp, ',');
         f = stof(temp);
-        getline(in, name, ',');
+        getline(in, txt, ',');
+        getline(in, temp);
         ch = temp.at(0);
-        getline(in, name);
-        out << i << '\t' << name << '\t' << ch << '\n' ;
-        cout << name << '\t' << ch << '\n' ;
+        out << i << "\t" << f << "\t" << txt << "\t" << ch << endl;
+        cout << i << "\t" << f << "\t" << txt << "\t" << ch << endl;
     }
     in.close();
     out.close();
